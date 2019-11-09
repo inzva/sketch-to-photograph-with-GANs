@@ -36,12 +36,12 @@ Run **binarization.py** to get final edge maps.
 ### Baseline Model
 The model as seen in the paper by Chen and Hals.  
 
-![Fig 1.1 (source: SketchyGAN by  Chen and Hals)](misc/model.png)  
+![Fig 1.1 (source: SketchyGAN by  Chen and Hals)](model.png)  
 
 It follows a simple encoder-decoder structure for the generator and encoder structure for the discriminator. We used a one layer discriminator since a multi-layered approach proved rather complex for the problem we are dealing with.
 Uses MRU layers instead of convolutional layers, described by the image below:  
 
-![Fig 1.2 (source: SketchyGAN by  Chen and Hals)](misc/mru.png)  
+![Fig 1.2 (source: SketchyGAN by  Chen and Hals)](mru.png)  
 
 MRU provides continuous learning on the input image by taking in the input image with different sizes at every layer. 
 Skip connections also contribute to the preservation of information by concatenating the output of encoder layers to the decoder inputs at every layer (as seen by the dashed lines in Fig 1.1).
@@ -49,6 +49,14 @@ Skip connections also contribute to the preservation of information by concatena
 ### How to run
 After preparing the dataset in a directory, and setting the parameters of the _Dataset_ method in **Super-Mega-Model-128x128.ipynb** to match the root directory of the dataset, make sure the root has 2 folders named _data_ for source images and _edges_final_ for targets. Also change the _save_key_ to match the name of your output directory which should be at the same folder as the notebook.
 Run **Super-Mega-Model-128x128.ipynb** and train for the desired number of epochs and iterations. Pass the path to any image you would like to predict to the method _predict_real_ to see your own results.
+
+### Our results
+
+
+Source             |  Prediction
+:-------------------------:|:-------------------------:
+![](misc/src.png)  |  ![](misc/dst.png)
+
 
 ### Contributors
 
