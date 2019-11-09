@@ -34,11 +34,15 @@ Run **binarization.py** to get final edge maps.
 
 ## Model
 ### Baseline Model
-The model as seen in the paper by Chen and Hals.
-![Fig 1.1 (source: SketchyGAN by  Chen and Hals)](model.png)
+The model as seen in the paper by Chen and Hals.  
+
+![Fig 1.1 (source: SketchyGAN by  Chen and Hals)](misc/model.png)  
+
 It follows a simple encoder-decoder structure for the generator and encoder structure for the discriminator. We used a one layer discriminator since a multi-layered approach proved rather complex for the problem we are dealing with.
-Uses MRU layers instead of convolutional layers, described by the image below:
-![Fig 1.2 (source: SketchyGAN by  Chen and Hals)](mru.png)
+Uses MRU layers instead of convolutional layers, described by the image below:  
+
+![Fig 1.2 (source: SketchyGAN by  Chen and Hals)](misc/mru.png)  
+
 MRU provides continuous learning on the input image by taking in the input image with different sizes at every layer. 
 Skip connections also contribute to the preservation of information by concatenating the output of encoder layers to the decoder inputs at every layer (as seen by the dashed lines in Fig 1.1).
 
