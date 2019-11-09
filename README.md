@@ -9,6 +9,19 @@ In this project out goal is to generate image to image translation with GANs. Ou
 To start off with our problem, we needed paired image to image datasets, preferably edges and photos for our primal goal. We found edges2shoes had quite a bit of paired images and used it to start with [2]. Later on, we realized 20,000 pairs were not enough for the model to perform well. 
 We decided to create our own pairs by using a dataset of one class, and chose the CelebA dataset to be a better fit for our model with around 202,000 pairs [3]. We used Holistically Generated Edge Detection to extract the edges of the images in the dataset, and later binarization, erosion and dilation to produce sketch-like edgemaps from the photos [4]. 
 
+### How to prepare
+On terminal, run **detect_edges_image.py** to get edges from images.
+
+
+ - -s for source
+ - -d for destination
+ - -ts for target size
+ - -e for edge detector model (give hed_model to use the pre-trained model)
+
+Run **binarization.py** to get final edge maps.
+ - -s for source
+ - -d for destination
+
 ## Project Dependencies
 
  - Keras
@@ -35,9 +48,9 @@ Run **Super-Mega-Model-128x128.ipynb** and train for the desired number of epoch
 
 ### Contributors
 
-@Bekci
-@eylulyalcinkaya
-@cemreefe
+ - [Burak Bekçi](https://github.com/Bekci) 
+ - [Eylül Yalçınkaya](https://github.com/eylulyalcinkaya)  
+ - [Cemre Efe Karakaş](https://github.com/cemreefe)
 
 ## References
 
@@ -46,4 +59,6 @@ Run **Super-Mega-Model-128x128.ipynb** and train for the desired number of epoch
  3. http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
  4. https://www.pyimagesearch.com/2019/03/04/holistically-nested-edge-detection-with-opencv-and-deep-learning/
  
+
+> Written with [StackEdit](https://stackedit.io/).
 
